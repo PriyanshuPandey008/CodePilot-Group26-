@@ -120,6 +120,7 @@ We welcome contributions of all kinds! If you'd like to help:
 1. Fork this repo
 2. Create a new branch (`feature/your-feature`)
 3. Submit a pull request 🛠️
+4. Follow the coding standards as set in the repository
 
 ---
 
