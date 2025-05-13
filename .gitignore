@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+.vscode/
+.DS_Store
+*.log
+bun.lockb
+node_modules/
+dist/
+.vite/
+.DS_Store
+build/
