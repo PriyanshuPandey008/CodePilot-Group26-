@@ -16,6 +16,7 @@ const corsOptions = {
 
 // Middleware
 app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // Mount AI routes
