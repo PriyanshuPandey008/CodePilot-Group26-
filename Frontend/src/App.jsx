@@ -13,6 +13,8 @@ import prism from "prismjs"
 import Markdown from "react-markdown"
 import axios from 'axios'
 import './App.css'
+import { ThemeProvider } from './context/ThemeContext';
+import ThemeToggle from './components/ThemeToggle';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -41,26 +43,29 @@ async function reviewCode(){
 }
 
   return (
-    <Router>
-      <Routes>
-        {/* Redirect root to login */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        
-        {/* Auth routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        
-        {/* Protected route */}
-        <Route 
-          path="/code-review" 
-          element={
-            <ProtectedRoute>
-              <CodeReview />
-            </ProtectedRoute>
-          } 
-        />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ThemeToggle />
+        <Routes>
+          {/* Redirect root to login */}
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          
+          {/* Auth routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          
+          {/* Protected route */}
+          <Route 
+            path="/code-review" 
+            element={
+              <ProtectedRoute>
+                <CodeReview />
+              </ProtectedRoute>
+            } 
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 };
 
